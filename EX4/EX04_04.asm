@@ -1,6 +1,8 @@
 TITLE Integer Expression Calculation            (EX04_04.asm)
 ; This program adds and subtracts 32-bit unsigned
-; integers and stores the sum in a variable.
+; integers and stores the sum in a variable
+; A = (A + B) - (C + D) 
+; using registers eax, ebx, ecx, and edx
 INCLUDE Irvine32.inc
 .data
 val1 DWORD 8
