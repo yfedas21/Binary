@@ -1,15 +1,16 @@
-TITLE Symbolic Constants (EX04_05.asm)
+TITLE Symbolic Integer Constants            (EX04_05.asm)
+INCLUDE Irvine32.inc
 .data
-m = 1
-t = 2
-w = 3
-th = 4
-f = 5
-sa = 6
-su = 7
-week DWORD m,t,w,th,f,sa,su
+s EQU 1
+m EQU 2
+t EQU 3
+w EQU 4
+th EQU 5
+f EQU 6
+sa EQU 7
+week BYTE s,m,t,w,th,f,sa
 .code
-MAIN PROC
-	mov eax, week
-MAIN ENDP
-END MAIN
+main PROC
+	exit
+main ENDP
+END main
