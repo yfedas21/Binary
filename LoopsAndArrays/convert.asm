@@ -3,7 +3,6 @@ TITLE (convert.asm)
 ; ex. takes 12345678 and reverses the order and stores in 
 ; the label littleEndian: 78563412 
 ; bswap solution accidentally found here: https://stackoverflow.com/questions/46824630/how-do-i-address-the-upper-16-bits-of-a-32-bit-register
-INCLUDE Irvine32.inc 
 .data
 bigEndian BYTE 12h, 34h, 56h, 78h
 littleEndian DWORD ? 

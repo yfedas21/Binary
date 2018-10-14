@@ -10,7 +10,6 @@ TITLE (exchange.asm)
 ;               3. On line 28, be sure to add the correct number of bytes to esi
 ;               4. Change register from al to ax or eax accordingly, lines 25 - 27
 ;
-INCLUDE Irvine32.inc 
 .data
 ; an array with an even number of values
 array BYTE 1h, 2h, 3h, 4h, 5h, 6h, 7h, 8h, 9h, 10h
