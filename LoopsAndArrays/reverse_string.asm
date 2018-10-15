@@ -1,6 +1,8 @@
 TITLE (reverse_string.asm)
 ; This program takes a string and reverses it
 ; for example: racecar -> racecar
+
+; This solution is taken directly from the class slides
 INCLUDE Irvine32.inc 
 .data 
 source BYTE "This is a source string",0
