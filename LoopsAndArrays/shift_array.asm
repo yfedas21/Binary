@@ -1,27 +1,27 @@
 TITLE (shift_array.asm)
 ; This program will take an int array and increment the 
 ; positions of each value. ie [10,20,30,40] --> [40,10,20,30]
-; How to do modulo solution found here: https://stackoverflow.com/questions/8021772/assembly-language-how-to-do-modulo
 INCLUDE Irvine32.inc 
 .data
 intArray BYTE 10h, 20h, 30h, 40h
-swapped BYTE SIZEOF intArray DUP(?) ; an array to hold the modified array
 .code
 main PROC
-    mov dx, 0 ; clear register for mod
-    mov edi, 0
-    mov ax, SIZEOF intArray ; should be 4
-    mov ecx, SIZEOF intArray ; number of loop iterations
-    mov esi, 1 
-
-    pool:
-        mov bx, WORD PTR [esi] ; the number you are modding ie 1 mod 4, bx would be 1
-        div bx
-        movzx edi, intArray[esi]
-        mov [swapped[bx]], BYTE PTR [edi]
-        inc esi
-        loop pool
+    ; Personally, I hate this solution, even though it has
+    ; the correct behavior. I would rather implement this
+    ; sort of feature using the mod operator. All I would need
+    ; in that case would be the address of the first value in the 
+    ; array. What I mean by mod feature: have a counter esi start at 1. 
+    ; 1 mod 4 is 1, 2 mod 4 is 2, 3 mod 4 is 3, and 4 mod 4 is 0. 
+    ; I would use the result of the mod to determine where to place the 
+    ; value. I couldn't do this in assembler because I ran out of registers... 
+    mov al, intArray+3
+    mov ah, intArray+2
+    mov bl, intArray+1
+    mov bh, intArray
+    mov [intArray], al
+    mov [intArray+1], bh
+    mov [intArray+2], bl
+    mov [intArray+3], ah
     exit
-    ; div bx will store remainder in dx 
 main ENDP
 end main
