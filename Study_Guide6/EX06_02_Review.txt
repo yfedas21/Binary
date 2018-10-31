@@ -1,0 +1,11 @@
+1. Which jump instructions follow unsigned integer comparisons? 
+    JNS
+2. Which jump instructions follow signed integer comparisons?
+    JN
+3. Which conditional jump instruction is equivalent to JNAE?
+    JB
+4. Which conditional jump instruction is equivalent to JNA instruction? 
+    JBE
+5. Which conditional jump instruction is equivalent to the JNGE instruction? 
+    JL
+6.  No, the jump will not take place
