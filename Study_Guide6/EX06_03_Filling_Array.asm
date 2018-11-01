@@ -3,6 +3,7 @@ Title EX06_03_Filling_Array.asm
 INCLUDE Irvine32.inc 
 .data
 dArray DWORD ? ; array to be generated
+secondArray DWORD ? ; second time proc run
 .code
 main PROC
     ; move pointer to dArray to eax 
@@ -28,6 +29,15 @@ main PROC
         call crlf
         add eax, 4
         loop L1
+
+    ; Run the procedure again
+    mov eax, offset secondArray
+    mov ebx, 1010b
+    mov edx, 0h
+    mov edx, 50d
+    mov esi, 0h
+    mov esi, 1000d
+    call fillArray
     exit
 main ENDP
 
