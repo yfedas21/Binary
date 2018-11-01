@@ -20,12 +20,13 @@ main PROC
     
     ; set the loop counter 
     mov ecx, ebx
-    ; address of first array element
-    mov edx, offset dArray
+
     L1:
+    ; address of first array element
+        mov edx, [eax]
         call WriteInt
         call crlf
-        inc edx
+        add eax, 4
         loop L1
     exit
 main ENDP
@@ -47,7 +48,7 @@ fillArray PROC
     ; set the loop counter to N
     mov ecx, ebx
     ; since ebx served its purpose, 
-    ; reuse it
+    ; reuse it (move the array ptr to ebx)
     mov ebx, eax
 
     ; upper bound, inclusive (+1),
@@ -59,10 +60,10 @@ fillArray PROC
     sub esi, edx ; 1000 - 100 = 900
     L1:
         mov eax, esi ; set the upper bound
-        call RandomRange ; eax now holds a number between 
+        call RandomRange ; eax now holds a number between 0 - 901
         add eax, edx ; to make the random number within range
         mov DWORD PTR [ebx], eax
-        inc ebx ; next DWORD
+        add ebx, 4 ; next DWORD
         loop L1
 
     ; pop the register values off the stack
