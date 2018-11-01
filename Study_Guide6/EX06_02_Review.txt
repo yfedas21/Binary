@@ -9,3 +9,20 @@
 5. Which conditional jump instruction is equivalent to the JNGE instruction? 
     JL
 6.  No, the jump will not take place
+
+
+
+    mov ebx, 95d
+    call CalcGrade
+
+    mov ebx, 85d
+    call CalcGrade
+
+    mov ebx, 75d
+    call CalcGrade
+
+    mov ebx, 65d
+    call CalcGrade
+
+    mov ebx, 55d
+    call CalcGrade
