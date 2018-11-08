@@ -51,7 +51,7 @@ setColor PROC
 ; A subroutine to create the kaleidoscope
 ; Receives: nothing (the column size is 24 by default)
 ; Returns: nothing
-; Requires:                                                  <------------------------------------- change this later
+; Requires: Gotoxy, SetTextColor, WriteString, Crlf 
 
     mov dh, 0 ; <-- to make sure dh is 0 to save headache
     mov ecx, 12 ; create an outer loop for rows (12 - 1)
