@@ -1,0 +1,19 @@
+Here are the values of the eax, ebx, and ecx registers after the conditional move
+
+1. EAX = 42h, EBX = 5h and ECX = 5h
+
+        eax = 5h
+        ebx = 5h
+        ecx = 5h
+
+2. EAX = 42h, EBX = 5h and ECX = 10h
+
+        eax = 42h
+        ebx = 5h
+        ecx = 10h
+
+3. EAX = 42h, EBX = 10h and ECX = 5h
+
+        eax = 10h
+        ebx = 10h
+        ecx = 5h
